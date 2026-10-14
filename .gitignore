@@ -1,0 +1,16 @@
+# Local Firebase client configuration and secrets
+Firebase/GoogleService-Info-*.plist
+*.p8
+service-account*.json
+
+# Generated Xcode project/build state
+IslandAgent.xcodeproj/
+*.xcworkspace/
+DerivedData/
+.build/
+.swiftpm/
+
+# Local preview server and Python artifacts
+.preview-server/
+__pycache__/
+*.py[cod]

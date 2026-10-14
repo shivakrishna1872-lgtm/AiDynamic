@@ -1,0 +1,31 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /approvalTasks/{taskId} {
+      allow create: if request.auth != null
+        && request.resource.data.id == taskId
+        && request.resource.data.ownerUID == request.auth.uid
+        && request.resource.data.status == "pending"
+        && request.resource.data.actionDescription is string
+        && request.resource.data.actionDescription.size() <= 500
+        && request.resource.data.timestamp is timestamp;
+
+      allow read: if request.auth != null
+        && resource.data.ownerUID == request.auth.uid;
+
+      allow update: if request.auth != null
+        && resource.data.ownerUID == request.auth.uid
+        && resource.data.status == "pending"
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(["status"])
+        && request.resource.data.status in ["approved", "declined"];
+
+      allow delete: if false;
+    }
+
+    match /users/{userId}/devices/{deviceId} {
+      allow read, create, update, delete: if request.auth != null
+        && request.auth.uid == userId;
+    }
+  }
+}
