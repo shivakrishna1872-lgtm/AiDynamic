@@ -2,8 +2,6 @@
 
 Dynamic island for AI requests, with a native macOS agent and iOS approval companion.
 
-
-
 This repository contains native Swift sources for a macOS menu-bar/notch companion, an iOS approval app, shared Firebase code, Firestore rules, and a Firebase Cloud Function for remote approval alerts. The character artwork and agent logic are original; `Mac/IslandWindow.swift` adapts DynamicIsle’s MIT-licensed floating-panel positioning pattern (see `ATTRIBUTION.md`).
 
 ## Generate and run in Xcode
@@ -45,19 +43,6 @@ Run `IslandIOS` in the iOS Simulator or on a device to test sign-in and live Fir
 
 ## Remote notifications while away
 
-The iPhone registers with APNs/FCM, stores the FCM Installation ID (FID) in `users/{uid}/devices/{deviceId}`, and the Cloud Function sends an alert when a pending approval task is created. Lock-screen copy is generic; task details remain in Firestore.
-
-1. Configure the iOS **Push Notifications** capability and signing with your Apple Developer account. Test remote push on a real iPhone; Simulator behavior is not a substitute for APNs verification.
-2. Upload the APNs `.p8`, Key ID, and Team ID in Firebase Console → Project settings → Cloud Messaging. Never include the `.p8` or service-account file in the app/repository.
-3. Enable the Firebase Cloud Messaging API. Cloud Functions deployment requires a Firebase Blaze project/billing account; review pricing first.
-4. Install Firebase CLI, select the correct Firebase project (for example `firebase use --add`), install dependencies with `cd functions && npm install`, then deploy from the repository root: `firebase deploy --only functions:notifyOnPendingApproval`.
-5. Deploy Firestore rules: `firebase deploy --only firestore:rules`.
-6. Sign in on both devices, allow notifications on iPhone, create a pending approval on Mac, then background the iPhone app and confirm an alert arrives. Also verify the Firestore task appears and Allow/Decline resolves the Mac wait.
-
-FCM/APNs is best-effort delivery; notification settings, Focus modes, connectivity, and Apple delivery policy can prevent an alert. Firestore remains the source of truth; the iOS app shows tasks live when opened.
-
-## Remote notifications while away
-
 The iPhone registers with APNs/FCM, stores the FCM Installation ID (FID) in `users/{uid}/devices/{deviceId}`, and the Cloud Function sends an alert when a pending approval task is created. The lock-screen message is generic; task details remain in Firestore.
 
 1. In Xcode, add the iOS **Push Notifications** capability and configure signing with your Apple Developer account. Test remote push on a real iPhone; Simulator behavior is not a substitute for APNs delivery verification.
@@ -75,7 +60,6 @@ FCM/APNs is best-effort delivery; user notification settings, Focus modes, conne
 - [Fazm](https://github.com/mediar-ai/fazm) demonstrates broader desktop automation, but its source includes external model/provider and data-transfer paths and an approval gate with permissive default mode. This project does not copy those flows: it keeps the tool allowlist narrow and requires an explicit phone approval before note filesystem changes.
 - `Mac/IslandWindow.swift` adapts the MIT-licensed DynamicIsle `IslandWindow.swift` floating-panel configuration and top-center/menu-bar position calculation. Required copyright and permission terms are retained in `ATTRIBUTION.md`.
 - Fazm source code is not copied; its root `LICENSE` was not present in the repository contents inspected. Its permissive approval default and external service paths were not adopted.
-
 
 ## Testing status
 
