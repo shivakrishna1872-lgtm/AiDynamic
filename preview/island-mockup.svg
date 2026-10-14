@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760">
+  <defs>
+    <linearGradient id="desktop" x2="0" y2="1"><stop stop-color="#273549"/><stop offset="1" stop-color="#101820"/></linearGradient>
+    <linearGradient id="phone" x2="0" y2="1"><stop stop-color="#f8fafc"/><stop offset="1" stop-color="#e9eef5"/></linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="170%"><feDropShadow dx="0" dy="14" stdDeviation="18" flood-color="#000" flood-opacity=".35"/></filter>
+    <filter id="glow" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+  <rect width="1200" height="760" fill="#121923"/>
+  <text x="75" y="72" fill="#f2f5fa" font-family="-apple-system,BlinkMacSystemFont,Arial" font-size="27" font-weight="700">Island Agent · Native UI concept</text>
+  <text x="75" y="108" fill="#9ba9ba" font-family="-apple-system,BlinkMacSystemFont,Arial" font-size="15">Mac approval island + iPhone alert inbox</text>
+  <rect x="54" y="156" width="730" height="494" rx="26" fill="#202a36" stroke="#566274" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="70" y="172" width="698" height="450" rx="16" fill="url(#desktop)"/>
+  <rect x="70" y="172" width="698" height="27" rx="16" fill="#dfe5ee"/>
+  <circle cx="88" cy="185" r="5" fill="#fd6158"/><circle cx="105" cy="185" r="5" fill="#f5bd4f"/><circle cx="122" cy="185" r="5" fill="#32c759"/>
+  <text x="96" y="258" fill="#eff4fa" font-family="Arial" font-size="22" font-weight="700">Your Mac</text>
+  <text x="96" y="289" fill="#aebaca" font-family="Arial" font-size="14">Hold ⌥ + ⌘ and speak · Ollama stays local</text>
+  <path d="M245 324 C278 270 363 262 408 290 C456 258 547 277 572 324" fill="none" stroke="#6e839c" stroke-width="2" opacity=".48"/>
+  <circle cx="407" cy="334" r="5" fill="#76dbad" filter="url(#glow)"/>
+  <text x="96" y="578" fill="#d4deea" font-family="Arial" font-size="14">Private actions pause until you approve on iPhone.</text>
+  <g filter="url(#shadow)"><rect x="273" y="196" width="290" height="104" rx="37" fill="#000"/><rect x="352" y="194" width="132" height="16" rx="8" fill="#000"/><circle cx="301" cy="232" r="11" fill="#62d18a"/><circle cx="296" cy="217" r="3.3" fill="#62d18a"/><circle cx="303" cy="214" r="2.4" fill="#62d18a"/><circle cx="310" cy="218" r="3.1" fill="#62d18a"/><circle cx="313" cy="226" r="2.4" fill="#62d18a"/><circle cx="310" cy="240" r="3.2" fill="#62d18a"/><circle cx="303" cy="247" r="2.4" fill="#62d18a"/><circle cx="295" cy="244" r="3.1" fill="#62d18a"/><circle cx="290" cy="237" r="2.4" fill="#62d18a"/><circle cx="297" cy="230" r="1.3" fill="#07140b"/><circle cx="305" cy="230" r="1.3" fill="#07140b"/><circle cx="298" cy="236" r="1.1" fill="#07140b"/><circle cx="301" cy="238" r="1.1" fill="#07140b"/><circle cx="304" cy="236" r="1.1" fill="#07140b"/><text x="322" y="237" fill="#fff" font-family="Arial" font-size="13" font-weight="700">Approval required</text><text x="298" y="265" fill="#bfc4ce" font-family="Arial" font-size="11">Create note ‘Meeting summary’</text><text x="298" y="282" fill="#858b96" font-family="Arial" font-size="10">Review this action on your iPhone</text></g>
+  <g filter="url(#shadow)"><rect x="866" y="140" width="276" height="530" rx="42" fill="#101116" stroke="#626a76" stroke-width="3"/><rect x="879" y="157" width="250" height="498" rx="32" fill="url(#phone)"/><rect x="961" y="157" width="85" height="20" rx="10" fill="#101116"/></g>
+  <text x="903" y="218" fill="#151a21" font-family="Arial" font-size="19" font-weight="700">Approvals</text><text x="903" y="244" fill="#566275" font-family="Arial" font-size="12">Island Agent needs approval</text>
+  <rect x="895" y="273" width="218" height="60" rx="15" fill="#fff" stroke="#e1e5ec"/><text x="911" y="298" fill="#18202a" font-family="Arial" font-size="12" font-weight="700">Island Agent needs approval</text><text x="911" y="317" fill="#687589" font-family="Arial" font-size="10">A Mac action is waiting for your review.</text>
+  <rect x="895" y="355" width="218" height="194" rx="18" fill="#fff" stroke="#e2e7ee"/><text x="914" y="389" fill="#1b2430" font-family="Arial" font-size="15" font-weight="700">Create note ‘Meeting summary’</text><text x="914" y="413" fill="#8390a1" font-family="Arial" font-size="11">Today · Just now</text>
+  <rect x="911" y="452" width="85" height="41" rx="12" fill="#fff" stroke="#cbd2dd"/><text x="934" y="478" fill="#343c49" font-family="Arial" font-size="12" font-weight="700">Decline</text><rect x="1007" y="452" width="89" height="41" rx="12" fill="#1478f2"/><text x="1034" y="478" fill="#fff" font-family="Arial" font-size="12" font-weight="700">Allow</text>
+  <text x="913" y="524" fill="#939cab" font-family="Arial" font-size="10">Buttons update the Mac task in Firestore</text><text x="75" y="710" fill="#8391a3" font-family="Arial" font-size="13">Static concept preview · Native SwiftUI rendering must be verified in Xcode on macOS/iOS.</text>
+</svg>

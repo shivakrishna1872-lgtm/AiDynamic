@@ -52,7 +52,7 @@ The iPhone registers with APNs/FCM, stores the FCM Installation ID (FID) in `use
 5. Deploy `firestore.rules` using `firebase deploy --only firestore:rules`.
 6. Sign in on both devices, allow notifications on iPhone, create a pending approval on Mac, then put the iPhone app in background and confirm an alert arrives. Also confirm the Firestore task appears and Allow/Decline resolves the Mac wait.
 
-FCM/APNs is best-effort delivery; user notification settings, Focus modes, connectivity, and Apple delivery policy can prevent an alert. Firestore remains the source of truth; the iOS app shows tasks live when opened.
+FCM/APNs is best-effort delivery; notification settings, Focus modes, connectivity, and Apple delivery policy can prevent an alert. Firestore remains the source of truth; the iOS app shows tasks live when opened.
 
 ## Repository reference notes
 
@@ -63,4 +63,4 @@ FCM/APNs is best-effort delivery; user notification settings, Focus modes, conne
 
 ## Testing status
 
-The coding workspace is Linux and has no `swift` or `xcodebuild`; it cannot build the native targets, run speech/hotkey tests, exercise APNs, or show a real macOS/iOS Simulator rendering. The source must be opened in Xcode on macOS and tested with the Firebase/APNs setup above. Run Firebase Functions tests/emulator checks locally after installing dependencies. Static design previews are included at `preview/island-mockup.svg` and `preview/mascot-animation.svg`. `preview/mascot-animation.gif` is a generated looping animation/storyboard preview of the iPhone mascot, not a running native app.
+The coding workspace is Linux and has no `swift` or `xcodebuild`; it cannot build the native targets, run speech/hotkey tests, exercise APNs, or show a real macOS/iOS Simulator rendering. The source must be opened in Xcode on macOS and tested with the Firebase/APNs setup above. Run Firebase Functions tests/emulator checks locally after installing dependencies. SVG previews are included at `preview/island-mockup.svg` and `preview/mascot-animation.svg`. A generated looping GIF/storyboard preview is not a running native app.
